@@ -1,0 +1,36 @@
+<ng-container *ngFor="let menuItem of menuItems">
+
+  <a *ngIf="menuItem.routerLink && !menuItem.hasSubMenu" 
+      style="color: #ffe241;" mat-button 
+    [routerLink]="[menuItem.routerLink]" [state]="{id:menuItem.id}"
+    routerLinkActive="horizontal-active-link" 
+    [routerLinkActiveOptions]="{exact:true}"  
+    (click)="_appServices.rentalSubject.next(menuItem.id)">
+    <span>{{ menuItem.title | translate }}</span>
+  </a>
+
+  <a *ngIf="menuItem.href " mat-button  style="color: #ffe241;"
+  [attr.href]="menuItem.href || ''" [attr.target]="menuItem.target || ''">
+  <span>{{ menuItem.title | translate }}</span>
+  </a>
+   <a *ngIf="menuItem.hasSubMenu" mat-button [matMenuTriggerFor]="menu" style="color: #ffe241;"> 
+    <span>{{ menuItem.title | translate }}</span><mat-icon class="caret" style="color: #ffe241;">arrow_drop_down</mat-icon> 
+  </a>
+  <!-- <a *ngIf="menuItem.href && !menuItem.hasSubMenu" mat-button 
+    [attr.href]="menuItem.href || ''" [attr.target]="menuItem.target || ''">
+    <span>{{ menuItem.title | translate }}</span>
+  </a> -->
+
+  <!-- <a *ngIf="menuItem.hasSubMenu && menuItem.parentId == 0" mat-button [matMenuTriggerFor]="menu"> 
+    <span>{{ menuItem.title | translate }}</span><mat-icon class="caret">arrow_drop_down</mat-icon> 
+  </a>
+
+  <a *ngIf="menuItem.hasSubMenu && menuItem.parentId != 0" mat-menu-item [matMenuTriggerFor]="menu"> 
+    <span>{{ menuItem.title | translate }}</span> 
+  </a>  -->
+
+  <mat-menu #menu="matMenu" class="horizontal-sub-menu">
+      <app-horizontal-menu [menuParentId]="menuItem.id"></app-horizontal-menu>
+  </mat-menu>
+    
+</ng-container>

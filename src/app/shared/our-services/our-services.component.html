@@ -1,0 +1,22 @@
+<div class="section mt-3">
+    <div class="px-3">
+        <div class="theme-container">
+            <h1 class="section-title">Our Services</h1> 
+
+            <div fxLayout="row wrap" class="services-wrapper">
+            <!-- <div *ngFor="let service of services"> -->
+                <div *ngFor="let service of services" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-sm="50" class="p-2">
+                 
+                    <mat-card fxLayout="column" fxLayoutAlign="start center" class="h-100 w-100 text-center">            
+                        <!-- <mat-icon class="mat-icon-xlg" color="primary">{{service.icon}}</mat-icon> -->
+                        <h2 class="capitalize fw-600 my-3">{{service.title}}</h2>
+                        <p> {{service.desc}}</p>           
+                    </mat-card>
+                   
+                </div>
+        
+            </div>
+                
+        </div>
+    </div>   
+</div>

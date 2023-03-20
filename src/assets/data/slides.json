@@ -1,0 +1,30 @@
+[
+    
+   
+    { 
+        "title": "Luxury office space", 
+        "location": "230 W 55th St, New York, NY 10019, USA",
+        "priceDollar": {
+            "sale": 2500000,
+            "rent": null
+        },
+        "priceEuro": {
+            "sale": 2200000,
+            "rent": null
+        },
+        "image": "assets/images/props/propline.in-banner.jpg"
+    },
+    { 
+        "title": "Centrally located apartment", 
+        "location": "1627 Vine St, Los Angeles, CA 90028, USA", 
+        "priceDollar": {
+            "sale": null,
+            "rent": 5600
+        },
+        "priceEuro": {
+            "sale": null,
+            "rent": 5000
+        }, 
+        "image": "assets/images/props/15th-aug-banner.jpg"
+    } 
+]

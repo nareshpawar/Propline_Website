@@ -1,0 +1,23 @@
+<div class="section default">
+    <div class="px-3">
+        <div class="theme-container">
+            <h1 class="section-title">Our Mission</h1>            
+
+            <mat-card class="p-0" fxLayout="row wrap"> 
+                <div fxFlex="100" fxFlex.gt-md="50" class="p-3">            
+                   <div fxLayout="row wrap">
+                        <div *ngFor="let mission of missionModels " fxFlex="100" fxFlex.gt-xs="50" class="p-2">
+                            <!-- <mat-icon color="primary" class="mat-icon-xlg">{{mission.icon}}</mat-icon>
+                            <h2 class="capitalize fw-600 my-2">{{mission.title}}</h2> -->
+                            <p>{{mission.description}}</p>
+                        </div>
+                   </div>                     
+                </div> 
+                <div fxFlex="100" fxFlex.gt-md="50" fxShow="false" fxShow.gt-md>                    
+                    <img src="{{missionImageUrl}}" alt="mission" class="mw-100 d-block">                
+                </div>            
+            </mat-card>
+                
+        </div>
+    </div>   
+</div>
